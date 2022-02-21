@@ -14,11 +14,16 @@ export default {
       { hid: 'description', name: 'description', content: '' },
       { name: 'format-detection', content: 'telephone=no' },
     ],
-    link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
+    link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
+      {
+        rel: 'stylesheet',
+        href: 'https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@600&family=Noto+Sans+KR:wght@400;500;700&display=swap'
+      },
+    ],
   },
 
   // Global CSS: https://go.nuxtjs.dev/config-css
-  css: [],
+  css: ['@/assets/css/main.scss'],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [],
@@ -35,8 +40,13 @@ export default {
   ],
 
   // Modules: https://go.nuxtjs.dev/config-modules
-  modules: [],
-
+  modules: ['@nuxtjs/style-resources'],
+  styleResources: {
+    scss: ['./assets/css/*.scss']
+  },
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {},
+  alias: {
+
+  }
 }
