@@ -14,10 +14,11 @@ export default {
       { hid: 'description', name: 'description', content: '' },
       { name: 'format-detection', content: 'telephone=no' },
     ],
-    link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
+    link: [
+      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
       {
         rel: 'stylesheet',
-        href: 'https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@600&family=Noto+Sans+KR:wght@400;500;700&display=swap'
+        href: 'https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@400;500;600&family=Noto+Sans+KR:wght@400;500;700&display=swap',
       },
     ],
   },
@@ -37,16 +38,15 @@ export default {
     '@nuxtjs/eslint-module',
     // https://go.nuxtjs.dev/tailwindcss
     '@nuxtjs/tailwindcss',
+    '@nuxtjs/composition-api/module',
   ],
 
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: ['@nuxtjs/style-resources'],
   styleResources: {
-    scss: ['./assets/css/*.scss']
+    scss: ['./assets/css/*.scss'],
   },
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {},
-  alias: {
-
-  }
-}
+  alias: {},
+};
