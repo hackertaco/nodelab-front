@@ -1,10 +1,13 @@
 @import './variable.module.scss';
 
 html {
-  font-family: 'Noto Sans KR','Chakra Petch', sans-serif;
+  font-family: 'Noto Sans KR', 'Chakra Petch', sans-serif;
+  width: 100vw;
+  overflow-x: hidden;
 }
 
 body {
   margin: 0;
   padding: 0;
+  background-color: #FAFAFA;
 }
