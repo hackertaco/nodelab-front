@@ -55,7 +55,7 @@ export default {
 
 .header-container {
   width: 100%;
-  height: 64px;
+  height: 6vh;
   background-color: #FAFAFA;
   position: sticky;
   top: 0;
@@ -76,7 +76,7 @@ export default {
 .logo-title {
   font-family: "Chakra Petch", sans-serif !important;
   font-weight: 500;
-  font-size: $eng-h3;
+  font-size: $eng-h2;
   display: inline;
   font-style: normal;
 }
