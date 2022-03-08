@@ -6,15 +6,17 @@
       <study-list-container></study-list-container>
       <study-list-container></study-list-container>
     </div>
+    <footer-container></footer-container>
   </div>
 </template>
 
 <script>
 import StudyListContainer from '~/components/main/StudyListContainer'
+import FooterContainer from '~/components/parts/Footer'
 
 export default {
   name: 'IndexComponent',
-  components: { StudyListContainer }
+  components: { StudyListContainer, FooterContainer }
 }
 </script>
 
@@ -37,5 +39,6 @@ export default {
   width: 62.5%;
   display: flex;
   flex-direction: column;
+  margin-bottom: 25vh;
 }
 </style>
