@@ -203,8 +203,6 @@ input[type='text'] {
 }
 
 .sidebar-container {
-  width: 100%;
-  height: 100vh;
   z-index: 101;
   display: flex;
 
