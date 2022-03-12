@@ -23,11 +23,13 @@
           <icon-close class='sidebar-close' height='1.5vh' width='1.5vw'></icon-close>
         </div>
         <div class='sidebar-contents-body'>
-          <div class='sidebar-contents-body-card'>
-            <icon-star class='card-icon'></icon-star>
-            <span class='card-title'>내 닉네임</span>
-            <span class='card-mypage'>마이페이지</span>
-          </div>
+          <NuxtLink to='/mypage'>
+            <div class='sidebar-contents-body-card' @click='toggleSideBar'>
+              <icon-star class='card-icon'></icon-star>
+              <span class='card-title'>내 닉네임</span>
+              <span class='card-mypage'>마이페이지</span>
+            </div>
+          </NuxtLink>
           <div class='sidebar-contents-body-button'>
             <icon-logo class='icon' color='#6CF080' height='1.4vh' width='0.9vw'></icon-logo>
             <span class='mint'>스터디 만들어 보지 않을래요?</span>
@@ -168,6 +170,7 @@ input[type='text'] {
   display: flex;
   align-items: center;
   justify-content: center;
+  cursor: pointer;
 }
 
 .header-button {
@@ -177,6 +180,7 @@ input[type='text'] {
   display: flex;
   align-items: center;
   justify-content: center;
+  cursor: pointer;
 }
 
 .recommend-container {
