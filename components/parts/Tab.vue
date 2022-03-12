@@ -26,12 +26,13 @@ export default {
       type: Array
     }
   },
-  setup() {
+  setup(props, { emit }) {
     const currentTab = ref(0)
 
     // 만약 cT가 0이면, 첫번째 tab의 class가 tab-button이어야 함
     const changeTab = (idx) => {
       currentTab.value = idx
+      emit('tabChange', currentTab.value)
     }
     return {
       currentTab,
@@ -84,6 +85,7 @@ export default {
 
 .selected {
   color: #191919;
+  font-weight: bold;
 }
 
 .notSelected {
