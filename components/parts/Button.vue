@@ -22,6 +22,7 @@ export default {
   align-items: center;
   font-weight: 700;
   font-size: $kor-20;
+  cursor: pointer;
 }
 
 

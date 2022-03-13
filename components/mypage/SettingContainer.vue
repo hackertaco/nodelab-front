@@ -22,7 +22,9 @@ export default {
 <style scoped>
 .setting-container {
   display: flex;
-  justify-content: center;
+  align-items: center;
+  
+  flex-direction: column;
 }
 
 .setting-items {
