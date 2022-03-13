@@ -48,6 +48,7 @@ export default {
   display: flex;
   flex-direction: column;
   border-bottom: 1px solid $grey-3;
+  margin-top: 5.1vh;
 
   &-description {
     font-size: $kor-p3;
@@ -62,6 +63,7 @@ export default {
   color: $grey-4;
   align-items: center;
   margin-top: 1.85vh;
+  cursor: pointer;
 
   &-container {
     position: relative;
