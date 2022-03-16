@@ -62,7 +62,7 @@ export default {
 
 .description {
   color: $grey-4;
-  font-size: $eng-h2;
+  font-size: $eng-30;
   font-weight: 400;
   //line-height: 41px;
 

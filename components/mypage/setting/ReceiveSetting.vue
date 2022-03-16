@@ -39,7 +39,7 @@ export default {
   margin-top: 5.1vh;
 
   &-description {
-    font-size: $kor-p3;
+    font-size: $kor-16;
     color: $grey-4;
     font-weight: 500;
     margin-top: 0.8vh;

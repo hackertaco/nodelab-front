@@ -50,7 +50,7 @@ export default {
   &-buttons {
     display: flex;
     margin-bottom: -0.35vh;
-    font-size: $eng-h3;
+    font-size: $eng-24;
   }
 }
 

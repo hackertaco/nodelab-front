@@ -19,7 +19,7 @@ export default {
   margin-top: 7.4vh;
   display: flex;
   flex-direction: column;
-  font-size: $eng-h3;
+  font-size: $eng-24;
   font-weight: 600;
   width: 30.4vw;
   margin-bottom: 19.5vh;

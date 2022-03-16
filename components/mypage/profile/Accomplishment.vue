@@ -67,12 +67,12 @@ export default {
   margin-top: 3.1vh;
 
   &-ratio {
-    font-size: $eng-h3;
+    font-size: $eng-24;
     font-weight: 600;
     font-family: "Chakra Petch", sans-serif;
 
     &-title {
-      font-size: $kor-p4;
+      font-size: $kor-14;
       color: $grey-4;
       font-weight: bold;
 
@@ -129,6 +129,6 @@ export default {
 }
 
 .list-duration {
-  font-size: $kor-p4;
+  font-size: $kor-14;
 }
 </style>

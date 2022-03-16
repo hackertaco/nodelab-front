@@ -12,7 +12,7 @@ export default {
 
 <style lang='scss' scoped>
 .title-container {
-  font-size: $eng-h3;
+  font-size: $eng-24;
   font-weight: 600;
 }
 </style>

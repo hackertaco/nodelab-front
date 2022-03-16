@@ -117,7 +117,7 @@ export default {
 .logo-title {
   font-family: "Chakra Petch", sans-serif !important;
   font-weight: 500;
-  font-size: $eng-h2;
+  font-size: $eng-30;
   display: inline;
   font-style: normal;
 }
@@ -164,7 +164,7 @@ input[type='text'] {
   background-color: black;
   color: #FAFAFA;
   font-family: 'Noto Sans KR', sans-serif;
-  font-size: $kor-p3;
+  font-size: $kor-16;
   width: 63%;
   height: 100%;
   display: flex;
@@ -256,7 +256,7 @@ input[type='text'] {
 
         .card-mypage {
           color: $grey-4;
-          font-size: $eng-h4;
+          font-size: $eng-16;
           font-weight: 500;
           margin-top: 0.8vh;
           margin-bottom: 3.6vh;

@@ -43,7 +43,7 @@ export default {
 }
 
 .footer-contents {
-  font-size: $kor-p5;
+  font-size: $kor-12;
   position: relative;
   display: flex;
   width: 62.5%;

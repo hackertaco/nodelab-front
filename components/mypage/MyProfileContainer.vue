@@ -53,7 +53,7 @@ export default {
 }
 
 .profile-id {
-  font-size: $kor-p3;
+  font-size: $kor-16;
   font-weight: 500;
   margin-top: 1.5vh;
 }
