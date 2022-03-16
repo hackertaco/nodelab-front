@@ -39,7 +39,9 @@
             <span>내 스터디 바로가기</span>
           </div>
           <span class='sidebar-contents-body-items'>전체 스터디</span>
-          <span class='sidebar-contents-body-items'>북마크, 완료 스터디</span>
+          <NuxtLink to='/bookmark'>
+            <span class='sidebar-contents-body-items' @click='toggleSideBar'>북마크, 완료 스터디</span>
+          </NuxtLink>
           <span class='sidebar-contents-body-items'>노드랩에 문의하기</span>
           <span class='sidebar-contents-body-items logout'>로그아웃</span>
         </div>

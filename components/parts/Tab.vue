@@ -1,13 +1,11 @@
 <template>
   <div class='tab-container contents'>
-    <div class='tab-container-buttons'>
+    <div :class='`font-${mode}`' class='tab-container-buttons'>
       <div
-        v-for='(list, index) in lists' :key='index' :class='{"tab-button": index === currentTab}' class='tab-common'
+        v-for='(list, index) in lists' :key='index' :class='{"tab-button": isSelected(index)}' class='tab-common'
         @click='changeTab(index)'>
-        <span :class='{"selected":index === currentTab, "notSelected":index !== currentTab}'>{{ list }}</span>
-        <div
-          :class='{"rectangular-selected": index === currentTab,"rectangular-notSelected" : index !== currentTab}'
-          class='rectangular '></div>
+        <span :class='{"selected":isSelected(index), "notSelected":!isSelected(index)}'>{{ list }}</span>
+        <rectangular-point :is-selected='isSelected(index)' :mode='mode'></rectangular-point>
       </div>
     </div>
     <divider-line color='grey'></divider-line>
@@ -17,13 +15,18 @@
 <script>
 import { ref } from '@nuxtjs/composition-api'
 import DividerLine from '~/components/parts/Divider'
+import RectangularPoint from '~/components/parts/RectangularPoint'
 
 export default {
   name: 'TabHeader',
-  components: { DividerLine },
+  components: { RectangularPoint, DividerLine },
   props: {
     lists: {
       type: Array
+    },
+    mode: {
+      type: String,
+      default: 'mypage'
     }
   },
   setup(props, { emit }) {
@@ -34,15 +37,18 @@ export default {
       currentTab.value = idx
       emit('tabChange', currentTab.value)
     }
+    const isSelected = idx => (idx === currentTab.value)
     return {
       currentTab,
-      changeTab
+      changeTab,
+      isSelected
     }
   }
 }
 </script>
 
 <style lang='scss' scoped>
+
 .tab-container {
   display: flex;
   flex-direction: column;
@@ -50,8 +56,17 @@ export default {
   &-buttons {
     display: flex;
     margin-bottom: -0.35vh;
-    font-size: $eng-24;
   }
+}
+
+.font-mypage {
+  font-size: $eng-24;
+  line-height: 33px;
+}
+
+.font-bookmark {
+  font-size: $kor-36;
+  line-height: 20px;
 }
 
 .tab-button {
@@ -63,25 +78,10 @@ export default {
 .tab-common {
   margin-right: 1.8vw;
   display: flex;
-  line-height: 33px;
+
   cursor: pointer;
 }
 
-.rectangular {
-  width: 4px;
-  height: 4px;
-  margin-left: 0.4vw;
-  margin-top: 1vh;
-
-}
-
-.rectangular-selected {
-  background: $dark-191919 !important;
-}
-
-.rectangular-notSelected {
-  background: $grey-3;
-}
 
 .selected {
   color: #191919;
