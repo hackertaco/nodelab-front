@@ -1,18 +1,20 @@
 <template>
-  <div class='bookmark-container'>
+  <div class='bookmark-container contents'>
     <tab-header
       :lists='list'
       mode='bookmark' @tabChange='showThing'></tab-header>
+    <category-container class='contents'></category-container>
   </div>
 </template>
 
 <script>
 import { ref } from '@nuxtjs/composition-api'
 import TabHeader from '~/components/parts/Tab'
+import CategoryContainer from '~/components/parts/Category/Category'
 
 export default {
   name: 'BookmarkPage',
-  components: { TabHeader },
+  components: { CategoryContainer, TabHeader },
   setup() {
     const list = ['북마크', '완료 스터디']
     const tab = ref(0)
@@ -31,5 +33,6 @@ export default {
   display: flex;
   align-items: center;
   flex-direction: column;
+
 }
 </style>
