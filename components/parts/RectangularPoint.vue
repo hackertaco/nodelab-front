@@ -33,10 +33,9 @@ export default {
 }
 
 .rectangular-bookmark {
-  width: 8px;
-  height: 8px;
+  width: 0.41vw;
+  height: 0.74vh;
   margin-left: 0.4vw;
-  margin-top: 1vh;
 }
 
 .rectangular-selected {
