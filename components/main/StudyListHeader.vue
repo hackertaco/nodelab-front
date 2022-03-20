@@ -3,10 +3,11 @@
     <icon-down class='icon' width='4%'></icon-down>
     <div class='header-container'>
       <div class='header-title'>
-        <div class='title'>곧 시작하는 스터디</div>
+        <div class='title'>{{ title.main }}
+        </div>
         <div class='rectangular'></div>
       </div>
-      <span class='description'>빠르게 스터디에 합류해 성장을 시작하세요</span>
+      <span class='description'>{{ title.sub }}</span>
     </div>
   </div>
 </template>
@@ -16,7 +17,13 @@ import IconDown from 'assets/svg/IconDown'
 
 export default {
   name: 'StudyListHeader',
-  components: { IconDown }
+  components: { IconDown },
+  props: {
+    title: {
+      type: Object,
+      default: () => ({})
+    }
+  }
 }
 </script>
 
