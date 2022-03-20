@@ -1,8 +1,9 @@
 <template>
   <div class='item'>
-    <div :class='`${isListOpened? "btn-clicked" : "btn-no-click"}`' class='btn' @click='toggleList'>카테고리</div>
-    <div class='line'></div>
-    <category-list-container v-if='isListOpened'></category-list-container>
+    <div :class='`${changeButton()}`' class='btn' @click='toggleList'>{{ categoryName }}
+    </div>
+    <div :class="categoryName === '카테고리'? 'line': 'line-selected'"></div>
+    <category-list-container v-if='isListOpened' @selected='change'></category-list-container>
   </div>
 </template>
 
@@ -15,12 +16,29 @@ export default {
   components: { CategoryListContainer },
   setup() {
     const isListOpened = ref(false)
+    const categoryName = ref('카테고리')
     const toggleList = () => {
       isListOpened.value = !isListOpened.value
     }
+    const change = list => {
+      categoryName.value = list
+      toggleList()
+
+    }
+
+    const changeButton = () => {
+      if (isListOpened.value === true) {
+        return 'btn-clicked'
+      } else if (categoryName.value === '카테고리') {
+        return 'btn-no-click'
+      } else {
+        return 'btn-no-click-selected'
+      }
+
+    }
     return {
       toggleList,
-      isListOpened
+      isListOpened, change, categoryName, changeButton
     }
   }
 }
@@ -52,11 +70,21 @@ export default {
   .btn-no-click {
     background-color: $grey-1;
     color: $grey-4;
+
+    &-selected {
+      background-color: $grey-1;
+      color: $pink;
+    }
   }
 
   .line {
     border-bottom: 1px solid #E5E5E5;
     width: 6vw;
+
+    &-selected {
+      border-bottom: 1px solid $pink;
+      width: 6vw;
+    }
   }
 }
 
