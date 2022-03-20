@@ -2,7 +2,9 @@
   <div class='total-container'>
     <div class='header-container'>
       <div class='practical-container'>
-        <span class='logo-title'>nodelab</span>
+        <NuxtLink to='/'>
+          <span class='logo-title'>nodelab</span>
+        </NuxtLink>
         <div class='icon' @click='toggleBtn'>
           <icon-search v-if='!isSearching' height='22' width='22'></icon-search>
           <icon-prev v-else height='22' width='22'></icon-prev>
