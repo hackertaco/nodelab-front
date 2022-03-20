@@ -45,13 +45,6 @@ export default {
           continue
         }
       }
-      // lists.forEach((list, i) => {
-      //   if (props.title.slice(0, 3).includes(list.slice(0, 3))) {
-      //     color = colors[i]
-      //   } else {
-      //     continue;
-      //   }
-      // })
       return color
     }
     return {
