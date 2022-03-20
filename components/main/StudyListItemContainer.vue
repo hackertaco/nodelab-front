@@ -19,9 +19,9 @@ export default {
   components: { StudyListItem },
   setup() {
     const data = ref([{
-      first: 'FRONTEND', second: 'program\n' +
-        '-ming \n' +
-        'language'
+      first: 'FRONTEND', second: 'PROGRAM\n' +
+        '-MING \n' +
+        'LANGUAGE'
     }, {
       first: 'BACK\n' + 'END', second: 'DATA\n' + 'BASE'
     }])
