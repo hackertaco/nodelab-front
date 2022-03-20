@@ -1,9 +1,11 @@
 <template>
   <div :class='showOthers' :style='styleObject'>
     <div v-if='showOthers' class='thumbnail-box'>
-      <div class='thumbnail-title'>DATABASE</div>
+      <div :style="title.includes('LANG') ? {'font-size':'0.9vw'}:{'font-size':'1.35vw'}" class='thumbnail-title'>
+        {{ title }}
+      </div>
       <div class='mini-box'></div>
-      <div class='main-box'></div>
+      <div :class='changeColor' class='main-box'></div>
     </div>
   </div>
 </template>
@@ -23,7 +25,15 @@ export default {
     showOthers: {
       type: Boolean,
       default: true
+    },
+
+    title: {
+      type: String
     }
+
+  },
+  setup(props) {
+
   }
 }
 </script>
@@ -38,7 +48,7 @@ export default {
 .thumbnail-title {
   font-family: "Chakra Petch";
   font-weight: 600;
-  font-size: 1.625rem;
+  font-size: $kor-26;
   text-transform: uppercase;
   color: $dark-191919;
   font-weight: 600;

@@ -1,6 +1,6 @@
 <template>
   <div class='list-container'>
-    <study-list-header></study-list-header>
+    <study-list-header :title='title'></study-list-header>
     <divider-line></divider-line>
     <study-list-item-container></study-list-item-container>
   </div>
@@ -13,7 +13,13 @@ import StudyListItemContainer from '~/components/main/StudyListItemContainer'
 
 export default {
   name: 'StudyListContainer',
-  components: { StudyListItemContainer, DividerLine, StudyListHeader }
+  components: { StudyListItemContainer, DividerLine, StudyListHeader },
+  props: {
+    title: {
+      type: Object,
+      default: () => ({})
+    }
+  }
 }
 </script>
 

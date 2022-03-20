@@ -1,6 +1,6 @@
 <template>
   <div class='body-container'>
-    <thum-nail :style-object='thumbnail'></thum-nail>
+    <thum-nail :style-object='thumbnail' :title='title'></thum-nail>
     <div class='body-content-container'>
       <div class='body-header-container'>
         <span class='category'>알고리즘</span>
@@ -25,6 +25,11 @@ import ThumNail from '~/components/parts/ThumbNail'
 export default {
   name: 'StudyItemBody',
   components: { ThumNail },
+  props: {
+    title: {
+      type: String
+    }
+  },
   setup() {
     const thumbnail = {
       width: '35%',
@@ -78,6 +83,7 @@ export default {
 }
 
 .body-title {
+  color: $dark-191919;
   margin-top: 5px;
   font-weight: 600;
   //font-size: 1.2rem;

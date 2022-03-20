@@ -1,24 +1,35 @@
 <template>
   <div class='list-total-container'>
-    <div class='list-total-sub-container'>
-      <study-list-item></study-list-item>
-      <study-list-item></study-list-item>
+    <div v-for='(d,i) in data' :key='i'>
+      <div class='list-total-sub-container'>
+        <study-list-item :title='d.first'></study-list-item>
+        <study-list-item :title='d.second'></study-list-item>
+      </div>
+      <div class='mid-line'></div>
     </div>
-    <div class='mid-line'></div>
-    <div class='list-total-sub-container'>
-      <study-list-item></study-list-item>
-      <study-list-item></study-list-item>
-    </div>
-    <div class='mid-line'></div>
   </div>
 </template>
 
 <script>
+import { ref } from '@nuxtjs/composition-api'
 import StudyListItem from '~/components/main/StudyListItem'
 
 export default {
   name: 'StudyListItemContainer',
-  components: { StudyListItem }
+  components: { StudyListItem },
+  setup() {
+    const data = ref([{
+      first: 'FRONTEND', second: 'program\n' +
+        '-ming \n' +
+        'language'
+    }, {
+      first: 'BACK\n' + 'END', second: 'DATA\n' + 'BASE'
+    }])
+
+    return {
+      data
+    }
+  }
 }
 </script>
 
