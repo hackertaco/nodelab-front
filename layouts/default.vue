@@ -32,10 +32,12 @@
               <span class='card-mypage'>마이페이지</span>
             </div>
           </NuxtLink>
-          <div class='sidebar-contents-body-button'>
-            <icon-logo class='icon' color='#6CF080' height='1.4vh' width='0.9vw'></icon-logo>
-            <span class='mint'>스터디 만들어 보지 않을래요?</span>
-          </div>
+          <NuxtLink to='/create-study' @click='toggleSideBar'>
+            <div class='sidebar-contents-body-button'>
+              <icon-logo class='icon' color='#6CF080' height='1.4vh' width='0.9vw'></icon-logo>
+              <span class='mint'>스터디 만들어 보지 않을래요?</span>
+            </div>
+          </NuxtLink>
           <div class='sidebar-contents-body-button margin60'>
             <icon-logo class='icon' height='1.4vh' width='0.9vw'></icon-logo>
             <span>내 스터디 바로가기</span>
@@ -274,6 +276,7 @@ input[type='text'] {
         align-items: center;
         height: 5.9vh;
         margin-bottom: 2.2vh;
+        cursor: pointer;
 
         span {
           font-size: $kor-20;
