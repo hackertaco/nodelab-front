@@ -1,0 +1,160 @@
+<template>
+  <div class='create-study-container'>
+    <tab-header :lists='list' @tabChange='showThing'></tab-header>
+    <div class='contents create-study-contents-container'>
+      <input v-model='type' class=' create-study-title ' placeholder='스터디 이름을 정해주세요!' @input='checkType' />
+      <div v-if='showWarning' class='warning'>스터디 이름은 30자를 넘을 수 없습니다!</div>
+      <div class='create-study-info-container'>
+        <div class='create-study-info-count create-study-info '>
+          <div class='create-study-info-count-title'>스터디 인원</div>
+          <div>
+            <span @click='deductCount'>-</span>
+            <span class='count'>{{ count }}</span>
+            <span @click='addCount'>+</span>
+          </div>
+        </div>
+        <div class='create-study-info-calendar create-study-info '>
+          <div class='create-study-info-calendar-title'>스터디 기간</div>
+          <div>
+            <span>22. 03. 03</span>
+            <span class='line'>-</span>
+            <span>22. 03. 10</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</template>
+
+<script>
+import { ref } from '@nuxtjs/composition-api'
+import TabHeader from '~/components/parts/Tab'
+
+export default {
+  name: 'CreateStudy',
+  components: { TabHeader },
+  setup() {
+    const list = ['스터디룸']
+    const tab = ref(0)
+    const showThing = (t) => {
+      tab.value = t
+    }
+    const type = ref('')
+    const showWarning = ref(false)
+    const checkType = () => {
+      console.log(type.value.length)
+      if (type.value.length > 30) {
+        showWarning.value = true
+      } else {
+        showWarning.value = false
+      }
+
+    }
+    const count = ref(2)
+    const addCount = () => {
+      count.value += 1
+    }
+    const deductCount = () => {
+      if (count.value !== 2) {
+
+        count.value -= 1
+      }
+    }
+    return {
+      list, showThing, checkType, type, showWarning, count, addCount, deductCount
+    }
+  }
+}
+</script>
+
+<style lang='scss' scoped>
+.create-study-container {
+  margin-top: 7.9vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.create-study-contents-container {
+  display: flex;
+  flex-direction: column;
+
+}
+
+.create-study-title {
+  height: 5vh;
+  border-bottom: 1px solid $grey-3;
+  margin-top: 1.68vh;
+  //position: absolute;
+  background-color: #FAFAFA;
+  //font-size: $kor-p1;
+  font-weight: 600;
+}
+
+input::placeholder {
+  font-size: $eng-30;
+  font-weight: 600;
+  color: $grey-4;
+  margin-top: 5px;
+  line-height: 2;
+}
+
+input:focus {
+  outline: none;
+}
+
+input:active {
+  font-size: $eng-30;
+  font-weight: 600;
+  color: $grey-4;
+}
+
+.warning {
+  font-size: $kor-14;
+  font-weight: 700;
+  line-height: 1.5;
+  color: $red;
+}
+
+.create-study-info-container {
+  display: flex;
+  font-family: "Chakra Petch", sans-serif;
+  color: $dark-191919;
+  margin-top: 1.85vh;
+}
+
+.create-study-info {
+  font-size: $eng-24;
+  font-weight: 600;
+
+  &-count {
+    display: flex;
+    width: 25%;
+    flex-grow: 1;
+
+    &-title {
+      width: 8.7vw;
+      margin-right: 0.83vw;
+    }
+
+    .count {
+      margin: 0 1.5vw;
+    }
+  }
+
+  &-calendar {
+    display: flex;
+    flex-grow: 1;
+    width: 25%;
+
+    &-title {
+      margin-right: 2.39vw;
+    }
+
+    .line {
+      margin: 0 1.5vw;
+    }
+  }
+}
+</style>
