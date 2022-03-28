@@ -13,13 +13,20 @@
             <span @click='addCount'>+</span>
           </div>
         </div>
-        <div class='create-study-info-calendar create-study-info '>
+        <div class='create-study-info-calendar create-study-info ' @click='openCalendar'>
           <div class='create-study-info-calendar-title'>스터디 기간</div>
           <div>
             <span>22. 03. 03</span>
             <span class='line'>-</span>
             <span>22. 03. 10</span>
           </div>
+        </div>
+
+        <div v-if='isCalendarOpen' class='calendar-container'>
+          <div @click='toggleCalendar'>
+            <icon-close class='calendar-container-icon' height='13px' width='13px'></icon-close>
+          </div>
+          <calendar-container></calendar-container>
         </div>
       </div>
     </div>
@@ -28,11 +35,13 @@
 
 <script>
 import { ref } from '@nuxtjs/composition-api'
+import IconClose from 'assets/svg/IconClose'
 import TabHeader from '~/components/parts/Tab'
+import CalendarContainer from '~/components/study/create/Calendar'
 
 export default {
   name: 'CreateStudy',
-  components: { TabHeader },
+  components: { CalendarContainer, IconClose, TabHeader },
   setup() {
     const list = ['스터디룸']
     const tab = ref(0)
@@ -60,8 +69,25 @@ export default {
         count.value -= 1
       }
     }
+    const isCalendarOpen = ref(false)
+    const openCalendar = () => {
+      isCalendarOpen.value = true
+    }
+    const toggleCalendar = () => {
+      isCalendarOpen.value = !isCalendarOpen.value
+    }
     return {
-      list, showThing, checkType, type, showWarning, count, addCount, deductCount
+      list,
+      showThing,
+      checkType,
+      type,
+      showWarning,
+      count,
+      addCount,
+      deductCount,
+      isCalendarOpen,
+      openCalendar,
+      toggleCalendar
     }
   }
 }
@@ -147,6 +173,8 @@ input:active {
     display: flex;
     flex-grow: 1;
     width: 25%;
+    position: relative;
+    cursor: pointer;
 
     &-title {
       margin-right: 2.39vw;
@@ -155,6 +183,26 @@ input:active {
     .line {
       margin: 0 1.5vw;
     }
+  }
+}
+
+.calendar-container {
+  width: 31.35vw;
+  height: 34.6vh;
+  background-color: #fff;
+  border: 0.5px solid $grey-3;
+  position: absolute;
+  display: flex;
+  align-items: center;
+  margin-top: 46px;
+  left: 50%;
+  justify-content: center;
+
+  &-icon {
+    right: 17px;
+    top: 17px;
+    position: absolute;
+    cursor: pointer;
   }
 }
 </style>
