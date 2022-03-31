@@ -120,10 +120,9 @@ export default {
       if (secondChecked.value.day !== -1) {
         if (secondChecked.value.month !== firstChecked.value.month) {
           // 서로 체크한 달이 다를 때
-          if (m === Number(month.value)) {
-            console.log(m, firstChecked.value.month)
+          if (firstChecked.value.month === m) {
             return day > firstChecked.value.day
-          } else {
+          } else if (secondChecked.value.month === m) {
             return day < secondChecked.value.day
           }
         } else {
