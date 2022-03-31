@@ -99,6 +99,7 @@ export default {
         firstChecked.value.day = -1
         secondChecked.value.day = -1
       }
+
       if (firstChecked.value.day === -1) {
         firstChecked.value.day = day
         firstChecked.value.month = month
@@ -108,6 +109,16 @@ export default {
         secondChecked.value.day = day
         secondChecked.value.month = month
         secondChecked.value.year = year
+        if (firstChecked.value.month === secondChecked.value.month && firstChecked.value.day > secondChecked.value.day) {
+          console.log('dddd')
+          firstChecked.value.day = secondChecked.value.day
+          firstChecked.value.month = secondChecked.value.month
+          firstChecked.value.year = secondChecked.value.year
+          secondChecked.value.day = -1
+          secondChecked.value.month = ''
+          secondChecked.value.year = ''
+          return
+        }
 
         console.log(secondChecked.value)
       }
