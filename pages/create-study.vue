@@ -29,6 +29,15 @@
           <calendar-container></calendar-container>
         </div>
       </div>
+      <div class='create-study-category-container'></div>
+      <div class='create-study-announce-container'>
+        <leader-profile class='create-study-profile'></leader-profile>
+        <introduce-study class='create-study-introduce'></introduce-study>
+      </div>
+      <div class='create-study-noti-container'>
+        <div class='create-study-noti-title'>공지사항</div>
+        <introduce-study class='create-study-noti-textarea'></introduce-study>
+      </div>
     </div>
   </div>
 </template>
@@ -38,10 +47,12 @@ import { ref } from '@nuxtjs/composition-api'
 import IconClose from 'assets/svg/IconClose'
 import TabHeader from '~/components/parts/Tab'
 import CalendarContainer from '~/components/study/create/Calendar'
+import LeaderProfile from '@/components/study/create/LeaderProfile'
+import IntroduceStudy from '@/components/study/create/IntroduceStudy'
 
 export default {
   name: 'CreateStudy',
-  components: { CalendarContainer, IconClose, TabHeader },
+  components: { IntroduceStudy, LeaderProfile, CalendarContainer, IconClose, TabHeader },
   setup() {
     const list = ['스터디룸']
     const tab = ref(0)
@@ -153,6 +164,7 @@ input:active {
 .create-study-info {
   font-size: $eng-24;
   font-weight: 600;
+  margin-top: 3.8vh;
 
   &-count {
     display: flex;
@@ -204,5 +216,48 @@ input:active {
     position: absolute;
     cursor: pointer;
   }
+}
+
+.create-study-announce-container {
+  width: 100%;
+  justify-content: space-between;
+  display: flex;
+  margin-top: 3.7vh;
+}
+
+.create-study-profile {
+  width: 31.5%;
+  height: 26.3vh;
+}
+
+.create-study-introduce {
+  width: 65.75%;
+  height: 26.3vh;
+}
+
+.create-study-noti-container {
+  width: 100%;
+  height: 19.5vh;
+  display: flex;
+  flex-direction: column;
+  margin-top: 5.5vh;
+  justify-content: space-between;
+}
+
+.create-study-noti-title {
+  font-weight: 600;
+  font-size: $eng-24;
+  line-height: 1.3;
+  letter-spacing: -0.03em;
+  height: 1.61%;
+  /* dark_#191919 */
+
+  color: #191919;
+}
+
+.create-study-noti-textarea {
+  width: 100%;
+  height: 76.3%;
+
 }
 </style>
