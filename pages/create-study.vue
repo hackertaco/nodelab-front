@@ -29,7 +29,16 @@
           <calendar-container></calendar-container>
         </div>
       </div>
-      <div class='create-study-category-container'></div>
+      <div class='create-study-category-container'>
+        <div class='item'>
+          <div class='btn'>카테고리</div>
+          <div class='line'></div>
+        </div>
+        <div class='item'>
+          <div class='btn btn_input'><input placeholder='초보자, 모두환영 등등 태그로 우리 팀을 소개해 보세요.' /></div>
+          <div class='line'></div>
+        </div>
+      </div>
       <div class='create-study-announce-container'>
         <leader-profile class='create-study-profile'></leader-profile>
         <introduce-study class='create-study-introduce'></introduce-study>
@@ -154,6 +163,11 @@ input:active {
   color: $red;
 }
 
+.create-study-category-container {
+  width: 100%;
+  margin-top: 36px;
+}
+
 .create-study-info-container {
   display: flex;
   font-family: "Chakra Petch", sans-serif;
@@ -242,6 +256,7 @@ input:active {
   flex-direction: column;
   margin-top: 5.5vh;
   justify-content: space-between;
+  margin-bottom: 96px;
 }
 
 .create-study-noti-title {
@@ -259,5 +274,60 @@ input:active {
   width: 100%;
   height: 76.3%;
 
+}
+
+.item {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  cursor: pointer;
+  height: 50px;
+
+  .btn {
+    background-color: $grey-1;
+    width: 6vw;
+    height: 4vh;
+    margin-bottom: 5px;
+    font-size: $kor-20;
+    color: $grey-4;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .btn input {
+    width: 90%;
+    height: 80%;
+    background-color: $grey-1;
+    font-weight: 500;
+    font-size: $kor-20;
+    line-height: 1.5;
+
+
+  }
+
+  .btn input::placeholder {
+    color: $grey-4;
+    font-size: $kor-20;
+    font-weight: 400;
+  }
+
+  .btn_input {
+    width: 41.75% !important;
+    height: 4vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+  }
+
+  .line {
+    border-bottom: 1px solid #E5E5E5;
+    width: 6vw;
+  }
+
+  .create-study-category-container {
+    width: 100%
+  }
 }
 </style>
