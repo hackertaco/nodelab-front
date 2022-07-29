@@ -1,0 +1,10 @@
+@import "./variable.module";
+
+
+@mixin font($type) {
+  @if ($type == 'eng') {
+    font-family: $font-eng;
+  } @else {
+    font-family: $font-kor;
+  }
+}
